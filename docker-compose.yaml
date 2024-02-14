@@ -1,0 +1,20 @@
+# Author Pushpak Dubey
+
+# This is a Docker Compose file. Docker Compose is a tool for defining and running multi-container Docker applications.
+# This file is written in YAML format.
+
+version: '3'  # Specifies the version of Docker Compose to use. Here, we're using version 3.
+
+services:  # Defines the services that make up your app. Services are essentially containers in production.
+
+  test:  # This is the service name. It's an arbitrary name that you can choose.
+
+    build: .  # Specifies the build context for the Dockerfile. Here, it's the current directory.
+
+    ports:  # Specifies the ports to expose. Here, port 5000 of the container is mapped to port 5000 of the host.
+
+      - :80  # The format is <host_port>:<container_port>
+
+    volumes:  # Specifies the volumes to mount. Here, the current directory is mounted to /app in the container.
+
+        - .:/app  # The format is <host_path>:<container_path>
